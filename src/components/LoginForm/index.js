@@ -18,9 +18,8 @@ class LoginForm extends Component {
     this.setState({password: event.target.value})
   }
 
-  onSubmitSuccess = () => {
+  onSubmitSuccess = jwtToken => {
     const {history} = this.props
-
     history.replace('/')
   }
 
@@ -48,7 +47,6 @@ class LoginForm extends Component {
 
   renderPasswordField = () => {
     const {password} = this.state
-
     return (
       <>
         <label className="input-label" htmlFor="password">
@@ -57,10 +55,9 @@ class LoginForm extends Component {
         <input
           type="password"
           id="password"
-          className="password-input-field"
+          className="password-input-filed"
           value={password}
           onChange={this.onChangePassword}
-          placeholder="Password"
         />
       </>
     )
@@ -68,7 +65,6 @@ class LoginForm extends Component {
 
   renderUsernameField = () => {
     const {username} = this.state
-
     return (
       <>
         <label className="input-label" htmlFor="username">
@@ -77,10 +73,9 @@ class LoginForm extends Component {
         <input
           type="text"
           id="username"
-          className="username-input-field"
+          className="username-input-filed"
           value={username}
           onChange={this.onChangeUsername}
-          placeholder="Username"
         />
       </>
     )
@@ -92,18 +87,18 @@ class LoginForm extends Component {
       <div className="login-form-container">
         <img
           src="https://assets.ccbp.in/frontend/react-js/nxt-trendz-logo-img.png"
-          className="login-website-logo-mobile-img"
+          className="login-website-logo-mobile-image"
           alt="website logo"
         />
         <img
           src="https://assets.ccbp.in/frontend/react-js/nxt-trendz-login-img.png"
-          className="login-img"
+          className="login-image"
           alt="website login"
         />
         <form className="form-container" onSubmit={this.submitForm}>
           <img
             src="https://assets.ccbp.in/frontend/react-js/nxt-trendz-logo-img.png"
-            className="login-website-logo-desktop-img"
+            className="login-website-logo-desktop-image"
             alt="website logo"
           />
           <div className="input-container">{this.renderUsernameField()}</div>
